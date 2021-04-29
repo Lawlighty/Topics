@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>[css]使用CSS3写一个下划线跟随动画菜单的动画效果</title>
+    <style>
+      ul {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      li {
+        padding: 0 20px;
+        cursor: pointer;
+        position: relative;
+        padding-bottom: 10px;
+      }
+      li::after {
+        content: "";
+        width: 0;
+        height: 3px;
+        background: #337ab7;
+        position: absolute;
+        bottom: 0;
+        /* 位于中间,当悬浮时往左边移动并且宽度变大,会有从中间延申的效果 */
+        left: 50%;
+        transition: all 0.2s;
+      }
+      li:hover::after {
+        left: 0%;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li>首页</li>
+        <li>新闻</li>
+        <li>赛事</li>
+        <li>我的</li>
+      </ul>
+    </nav>
+  </body>
+</html>
