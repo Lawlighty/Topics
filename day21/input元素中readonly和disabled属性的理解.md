@@ -1,0 +1,30 @@
+## input元素中readonly和disabled属性的理解
+
+### readonly
+把表单的属性设置为<strong>只读</strong>
+
+只读字段是不能修改的。不过，用户仍然可以使用 tab 键切换到该字段，还可以选中或拷贝其文本。
+
+readonly 属性可以防止用户对值进行修改，直到满足某些条件为止（比如选中了一个复选框）。然后，需要使用 JavaScript 消除 readonly 值，将输入字段切换到可编辑状态。
+
+### disabled
+<strong>禁用</strong>某个表单
+
+被禁用的 input 元素既不可用，也不可点击。可以设置 disabled 属性，直到满足某些其他的条件为止（比如选择了一个复选框等等）。然后，就需要通过 JavaScript 来删除 disabled 值，将 input 元素的值切换为可用。
+
+### 不同点
+* 生效范围不同
+
+    * readonly只对可输入的表单有效
+    * disabled对所有表单生效
+  
+* 效果不同
+
+    * readonly设置只读，可以获取焦点
+    * disabled直接阻止表单的一切操作
+
+
+* 提交不同
+
+    * readonly可以正常提交
+    * disabled会忽略提交
